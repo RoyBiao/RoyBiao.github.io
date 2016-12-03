@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2016 | Liruibiao的博客</title>
+  <title>android错误积累 | Liruibiao的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="标哥哥的技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liruibiao的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="1.使用全局变量更新适配器（待研究）异步获取数据更新全局变量，并发送消息更新适配器，解决方法：使用局部变量。1java.lang.IllegalStateException: The content of the adapter has changed but ListView did not receive a notification. Make sure the content of you">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android错误积累">
+<meta property="og:url" content="http://yoursite.com/2016/12/02/android错误积累/index.html">
 <meta property="og:site_name" content="Liruibiao的博客">
-<meta property="og:description" content="标哥哥的技术博客">
+<meta property="og:description" content="1.使用全局变量更新适配器（待研究）异步获取数据更新全局变量，并发送消息更新适配器，解决方法：使用局部变量。1java.lang.IllegalStateException: The content of the adapter has changed but ListView did not receive a notification. Make sure the content of you">
+<meta property="og:updated_time" content="2016-12-02T10:08:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liruibiao的博客">
-<meta name="twitter:description" content="标哥哥的技术博客">
+<meta name="twitter:title" content="android错误积累">
+<meta name="twitter:description" content="1.使用全局变量更新适配器（待研究）异步获取数据更新全局变量，并发送消息更新适配器，解决方法：使用局部变量。1java.lang.IllegalStateException: The content of the adapter has changed but ListView did not receive a notification. Make sure the content of you">
   
     <link rel="alternative" href="/atom.xml" title="Liruibiao的博客" type="application/atom+xml">
   
@@ -139,182 +140,126 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-android错误积累" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/02/android应用发布所需素材/" class="archive-article-date">
-  	<time datetime="2016-12-02T09:50:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/02/android应用发布所需素材/">android应用发布所需素材</a>
+    <h1 class="article-title" itemprop="name">
+      android错误积累
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/02/android错误积累/" class="archive-article-date">
+        <a href="/2016/12/02/android错误积累/" class="archive-article-date">
   	<time datetime="2016-12-02T09:25:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/02/android错误积累/">android错误积累</a>
-    </h1>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-使用全局变量更新适配器（待研究）"><a href="#1-使用全局变量更新适配器（待研究）" class="headerlink" title="1.使用全局变量更新适配器（待研究）"></a>1.使用全局变量更新适配器（待研究）</h3><p>异步获取数据更新全局变量，并发送消息更新适配器，解决方法：使用局部变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.lang.IllegalStateException: The content of the adapter has changed but ListView did not receive a notification. Make sure the content of your adapter is not modified from a background thread, but only from the UI thread. Make sure your adapter calls notifyDataSetChanged() when its content changes.</div></pre></td></tr></table></figure></p>
+<h3 id="2-jni内存溢出"><a href="#2-jni内存溢出" class="headerlink" title="2.jni内存溢出"></a>2.jni内存溢出</h3><p>使用jni时，如果新建的对象有返回java层，则交给java虚拟机管理内存记得释放内存，否则一定要手动释放内存 。<br>jni底层内存溢出错误：local reference table overflow max 512</p>
+<h3 id="3-is-your-activity-running？"><a href="#3-is-your-activity-running？" class="headerlink" title="3.is your activity running？"></a>3.is your activity running？</h3><p>Dialog在调用show或dismiss的时候，判断dialog所依赖的activity是否被销毁，否则将有可能发生Unable to add window – token android.os.BinderProxy@7fd5e6 is not valid; is your activity running？的问题。<br>例如：异步操作中，Activity已经退出，但是异步线程还没有执行完毕，如果此时异步线程通知主线程显示Dialog，将发生Dialog找不到可以依赖的Activity。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (context instanceof Activity) &#123;</div><div class="line">    if (((Activity) context).isFinishing()) &#123;</div><div class="line">        return ;</div><div class="line">    &#125; else &#123;</div><div class="line">        dialog.show() ;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="4-找不到javax"><a href="#4-找不到javax" class="headerlink" title="4.找不到javax.*"></a>4.找不到javax.*</h3><p>使用android studio找不到rt.jar下的javax.* 。解决方法：<br>在build.gradle添加rt.jar文件的支持<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">provided files (&apos;/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre/lib/rt.jar&apos;)</div></pre></td></tr></table></figure></p>
+<p>不要使用compile，否则打包的时候将和android.jar 下的javax.*发生冲突。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        <div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode"></div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/02/git安装/" class="archive-article-date">
-  	<time datetime="2016-12-02T09:00:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/02/git安装/">git安装</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/02/java学习路线/" class="archive-article-date">
-  	<time datetime="2016-12-02T08:27:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/02/java学习路线/">java学习路线</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/02/studio快捷键/" class="archive-article-date">
-  	<time datetime="2016-12-02T08:20:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/02/studio快捷键/">android studio快捷键</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+    <a href="/2016/12/02/android应用发布所需素材/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          android应用发布所需素材
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2016/12/02/git安装/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git安装</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
-    
+
+
+
+
+
+
 
 
       </div>
@@ -336,8 +281,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
